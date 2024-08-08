@@ -5,6 +5,8 @@
 - React
 - TypeScript
 - vanilla-extract
+- Tanstack Query
+- Tanstack Router
 - prettier
 - eslint
 
