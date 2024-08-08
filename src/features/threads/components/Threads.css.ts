@@ -1,6 +1,6 @@
 import { style } from '@vanilla-extract/css';
 
-const threadStyle = {
+const threadsStyle = {
   wrapper: style({
     maxWidth: '720px',
     width: '100%',
@@ -10,6 +10,11 @@ const threadStyle = {
   title: style({
     fontSize: '24px',
   }),
+  switcher: style({
+    display: 'flex',
+    justifyContent: 'flex-end',
+    gap: '16px',
+  }),
 };
 
-export { threadStyle };
+export { threadsStyle };

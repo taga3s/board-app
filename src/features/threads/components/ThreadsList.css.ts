@@ -1,11 +1,6 @@
 import { style } from '@vanilla-extract/css';
 
-const threadListStyle = {
-  switcher: style({
-    display: 'flex',
-    justifyContent: 'flex-end',
-    gap: '16px',
-  }),
+const threadsListStyle = {
   list: style({
     width: '100%',
     marginTop: '24px',
@@ -15,4 +10,4 @@ const threadListStyle = {
   }),
 };
 
-export { threadListStyle };
+export { threadsListStyle };

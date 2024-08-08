@@ -1,9 +1,14 @@
+import { Link } from '@tanstack/react-router';
+
 import { headerStyle } from './Header.css';
 
 const Header = () => {
   return (
     <header className={headerStyle.wrapper}>
-      <h1 className={headerStyle.title}>みんなの掲示板</h1>
+      <Link className={headerStyle.title} to='/'>
+        みんなの掲示板
+      </Link>
+      <Link to='/threads/new'>スレを立てる</Link>
     </header>
   );
 };

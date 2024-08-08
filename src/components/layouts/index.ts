@@ -1,1 +1,1 @@
-export * from './BoardLayout';
+export * from './AppLayout';

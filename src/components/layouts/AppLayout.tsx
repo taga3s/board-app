@@ -1,11 +1,12 @@
 import { FC, ReactNode } from 'react';
+
 import { Header } from '../ui/Header';
 
 type Props = {
   children: ReactNode;
 };
 
-const BoardLayout: FC<Props> = ({ children }) => {
+const AppLayout: FC<Props> = ({ children }) => {
   return (
     <div>
       <Header />
@@ -14,4 +15,4 @@ const BoardLayout: FC<Props> = ({ children }) => {
   );
 };
 
-export { BoardLayout };
+export { AppLayout };

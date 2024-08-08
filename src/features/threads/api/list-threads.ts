@@ -1,4 +1,5 @@
 import { useSuspenseQuery } from '@tanstack/react-query';
+
 import { BASE_URL } from '../../../config/api/consts';
 
 const fetcher = async (params: { offset: number }) => {

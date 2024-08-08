@@ -1,10 +1,10 @@
 import { Suspense, useState } from 'react';
-import { threadStyle } from './Thread.css';
-import { ThreadList } from './ThreadList';
-import { threadListStyle } from './ThreadList.css';
-import { Message } from '../../../components/ui/Message';
 
-const Thread = () => {
+import { Message } from '../../../components/ui/Message';
+import { threadsStyle } from './Threads.css';
+import { ThreadsList } from './ThreadsList';
+
+const Threads = () => {
   const [offset, setOffset] = useState(0);
 
   const handleClick = (direction: 'prev' | 'next') => {
@@ -16,18 +16,20 @@ const Thread = () => {
   };
 
   return (
-    <div className={threadStyle.wrapper}>
-      <h2 className={threadStyle.title}>新着スレッド</h2>
-      <div className={threadListStyle.switcher}>
+    <div className={threadsStyle.wrapper}>
+      <h2 className={threadsStyle.title}>新着スレッド</h2>
+      <div className={threadsStyle.switcher}>
         {offset > 0 && <button onClick={() => handleClick('prev')}>前へ</button>}
         <button onClick={() => handleClick('next')}>次へ</button>
-        <div>{offset + 1} ~ {offset + 10} 件</div>
+        <div>
+          {offset + 1} ~ {offset + 10} 件
+        </div>
       </div>
       <Suspense fallback={<Message message='読み込み中...' />}>
-        <ThreadList offset={offset} />
+        <ThreadsList offset={offset} />
       </Suspense>
     </div>
   );
 };
 
-export { Thread };
+export { Threads };
