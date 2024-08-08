@@ -10,10 +10,11 @@ module.exports = {
   ],
   ignorePatterns: ['dist', '.eslintrc.cjs'],
   parser: '@typescript-eslint/parser',
-  plugins: ['react-refresh', 'simple-import-sort'],
+  plugins: ['react-refresh', 'simple-import-sort', '@tanstack/query'],
   rules: {
     'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],
-    "simple-import-sort/imports": "error",
-    "simple-import-sort/exports": "error"
+    'simple-import-sort/imports': 'error',
+    'simple-import-sort/exports': 'error',
+    '@tanstack/query/exhaustive-deps': 'error',
   },
 };

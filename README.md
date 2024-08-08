@@ -17,6 +17,7 @@ $ npm install
 ```
 
 2. Copy .env.example
+
 ```
 $ cp .env.example .env
 ```
@@ -36,6 +37,7 @@ $ npm run lint
 ```
 
 - Format
+
 ```
 $ npm run format
 ```
