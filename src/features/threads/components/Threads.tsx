@@ -22,7 +22,7 @@ const Threads = () => {
         {offset > 0 && <button onClick={() => handleClick('prev')}>前へ</button>}
         <button onClick={() => handleClick('next')}>次へ</button>
         <div>
-          {offset + 1} ~ {offset + 10} 件
+          {offset + 1} ~ {offset + 10} 件目
         </div>
       </div>
       <Suspense fallback={<Message message='読み込み中...' />}>
