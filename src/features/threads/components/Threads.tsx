@@ -1,4 +1,4 @@
-import { Suspense, useState } from 'react';
+import { startTransition, Suspense, useState } from 'react';
 
 import { Message } from '../../../components/ui/Message';
 import { threadsStyle } from './Threads.css';
@@ -8,11 +8,13 @@ const Threads = () => {
   const [offset, setOffset] = useState(0);
 
   const handleClick = (direction: 'prev' | 'next') => {
-    if (direction === 'prev') {
-      setOffset(offset - 10);
-    } else {
-      setOffset(offset + 10);
-    }
+    startTransition(() => {
+      if (direction === 'prev') {
+        setOffset(offset - 10);
+      } else {
+        setOffset(offset + 10);
+      }
+    })
   };
 
   return (

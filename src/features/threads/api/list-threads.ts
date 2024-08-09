@@ -11,6 +11,7 @@ const useListThreads = (params: { offset: number }) => {
   return useSuspenseQuery<Thread[]>({
     queryKey: [`threads-offset-${params.offset}`],
     queryFn: () => apiClient.GET<Thread[]>(`/threads?offset=${params.offset}`),
+    staleTime: 1000 * 60 * 5,
   });
 };
 
