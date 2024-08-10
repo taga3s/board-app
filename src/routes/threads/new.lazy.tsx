@@ -1,6 +1,6 @@
 import { createLazyFileRoute } from '@tanstack/react-router';
-import { New } from '../../features/new/components/New';
+import { NewThread } from '../../features/newThread/components/NewThread';
 
 export const Route = createLazyFileRoute('/threads/new')({
-  component: () => <New />,
+  component: () => <NewThread />,
 });

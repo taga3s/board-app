@@ -1,6 +1,6 @@
 import { FC, ReactNode } from 'react';
 
-import { Header } from '../ui/Header';
+import { Header } from '..';
 
 type Props = {
   children: ReactNode;
@@ -8,10 +8,10 @@ type Props = {
 
 const AppLayout: FC<Props> = ({ children }) => {
   return (
-    <div>
+    <>
       <Header />
       <main>{children}</main>
-    </div>
+    </>
   );
 };
 

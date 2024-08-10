@@ -1,6 +1,6 @@
 import { startTransition, Suspense, useState } from 'react';
 
-import { Message } from '../../../components/ui/Message';
+import { Message } from '../../../components';
 import { threadsStyle } from './Threads.css';
 import { ThreadsList } from './ThreadsList';
 
@@ -14,7 +14,7 @@ const Threads = () => {
       } else {
         setOffset(offset + 10);
       }
-    })
+    });
   };
 
   return (

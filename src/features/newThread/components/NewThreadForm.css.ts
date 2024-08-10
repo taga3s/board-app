@@ -1,7 +1,7 @@
 import { style } from '@vanilla-extract/css';
 import { vars } from '../../../styles/vars.css';
 
-const newFormStyle = {
+const newThreadFormStyle = {
   wrapper: style({
     display: 'flex',
     flexDirection: 'column',
@@ -20,16 +20,9 @@ const newFormStyle = {
     fontSize: '16px',
     border: `1px solid ${vars.color.gray}`,
   }),
-  button: style({
+  buttonContainer: style({
     marginTop: '32px',
-    padding: '12px 24px',
-    fontSize: '16px',
-    backgroundColor: vars.color.blue,
-    color: vars.color.white,
-    border: 'none',
-    borderRadius: '4px',
-    cursor: 'pointer',
   }),
 };
 
-export { newFormStyle };
+export { newThreadFormStyle };

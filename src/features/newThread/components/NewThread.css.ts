@@ -1,6 +1,6 @@
 import { style } from '@vanilla-extract/css';
 
-const newStyle = {
+const newThreadStyle = {
   wrapper: style({
     maxWidth: '720px',
     width: '100%',
@@ -12,4 +12,4 @@ const newStyle = {
   }),
 };
 
-export { newStyle };
+export { newThreadStyle };
