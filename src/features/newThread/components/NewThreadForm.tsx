@@ -22,7 +22,7 @@ const NewThreadForm = () => {
       return;
     }
     mutateAsync({ title }).then(() => {
-      router.navigate({ to: '/' });
+      router.navigate({ to: '/', search: () => ({ offset: 0 }) });
     });
   };
 

@@ -13,23 +13,31 @@ import { createFileRoute } from '@tanstack/react-router'
 // Import Routes
 
 import { Route as rootRoute } from './routes/__root'
+import { Route as IndexImport } from './routes/index'
 
 // Create Virtual Routes
 
-const IndexLazyImport = createFileRoute('/')()
 const ThreadsNewLazyImport = createFileRoute('/threads/new')()
+const ThreadsThreadIdIndexLazyImport = createFileRoute('/threads/$threadId/')()
 
 // Create/Update Routes
 
-const IndexLazyRoute = IndexLazyImport.update({
+const IndexRoute = IndexImport.update({
   path: '/',
   getParentRoute: () => rootRoute,
-} as any).lazy(() => import('./routes/index.lazy').then((d) => d.Route))
+} as any)
 
 const ThreadsNewLazyRoute = ThreadsNewLazyImport.update({
   path: '/threads/new',
   getParentRoute: () => rootRoute,
 } as any).lazy(() => import('./routes/threads/new.lazy').then((d) => d.Route))
+
+const ThreadsThreadIdIndexLazyRoute = ThreadsThreadIdIndexLazyImport.update({
+  path: '/threads/$threadId/',
+  getParentRoute: () => rootRoute,
+} as any).lazy(() =>
+  import('./routes/threads/$threadId/index.lazy').then((d) => d.Route),
+)
 
 // Populate the FileRoutesByPath interface
 
@@ -39,7 +47,7 @@ declare module '@tanstack/react-router' {
       id: '/'
       path: '/'
       fullPath: '/'
-      preLoaderRoute: typeof IndexLazyImport
+      preLoaderRoute: typeof IndexImport
       parentRoute: typeof rootRoute
     }
     '/threads/new': {
@@ -49,14 +57,22 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ThreadsNewLazyImport
       parentRoute: typeof rootRoute
     }
+    '/threads/$threadId/': {
+      id: '/threads/$threadId/'
+      path: '/threads/$threadId'
+      fullPath: '/threads/$threadId'
+      preLoaderRoute: typeof ThreadsThreadIdIndexLazyImport
+      parentRoute: typeof rootRoute
+    }
   }
 }
 
 // Create and export the route tree
 
 export const routeTree = rootRoute.addChildren({
-  IndexLazyRoute,
+  IndexRoute,
   ThreadsNewLazyRoute,
+  ThreadsThreadIdIndexLazyRoute,
 })
 
 /* prettier-ignore-end */
@@ -68,14 +84,18 @@ export const routeTree = rootRoute.addChildren({
       "filePath": "__root.tsx",
       "children": [
         "/",
-        "/threads/new"
+        "/threads/new",
+        "/threads/$threadId/"
       ]
     },
     "/": {
-      "filePath": "index.lazy.tsx"
+      "filePath": "index.tsx"
     },
     "/threads/new": {
       "filePath": "threads/new.lazy.tsx"
+    },
+    "/threads/$threadId/": {
+      "filePath": "threads/$threadId/index.lazy.tsx"
     }
   }
 }

@@ -1,28 +1,26 @@
-import { startTransition, Suspense, useState } from 'react';
+import { Link } from '@tanstack/react-router';
+import { Suspense } from 'react';
 
 import { Message } from '../../../components';
+import { Route } from '../../../routes';
 import { threadsStyle } from './Threads.css';
 import { ThreadsList } from './ThreadsList';
 
 const Threads = () => {
-  const [offset, setOffset] = useState(0);
-
-  const handleClick = (direction: 'prev' | 'next') => {
-    startTransition(() => {
-      if (direction === 'prev') {
-        setOffset(offset - 10);
-      } else {
-        setOffset(offset + 10);
-      }
-    });
-  };
+  const { offset } = Route.useSearch();
 
   return (
     <div className={threadsStyle.wrapper}>
       <h2 className={threadsStyle.title}>新着スレッド</h2>
       <div className={threadsStyle.switcher}>
-        {offset > 0 && <button onClick={() => handleClick('prev')}>前へ</button>}
-        <button onClick={() => handleClick('next')}>次へ</button>
+        {offset > 0 && (
+          <Link from={`/`} search={() => ({ offset: offset - 10 })}>
+            前へ
+          </Link>
+        )}
+        <Link from={`/`} search={() => ({ offset: offset + 10 })}>
+          次へ
+        </Link>
         <div>
           {offset + 1} ~ {offset + 10} 件目
         </div>
