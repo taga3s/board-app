@@ -1,9 +1,9 @@
 import { QueryClientProvider } from '@tanstack/react-query';
 import { createRootRoute, Outlet } from '@tanstack/react-router';
-
-import { AppLayout } from '../components/layouts';
-import { queryClient } from '../api';
 import { ErrorBoundary } from 'react-error-boundary';
+
+import { queryClient } from '../api';
+import { AppLayout } from '../components/layouts';
 
 export const Route = createRootRoute({
   component: () => (

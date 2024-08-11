@@ -1,4 +1,5 @@
 import { recipe } from '@vanilla-extract/recipes';
+
 import { vars } from './vars.css';
 
 const Button = recipe({

@@ -1,9 +1,9 @@
+import { useRouter } from '@tanstack/react-router';
 import { ChangeEvent, FormEvent, useState } from 'react';
+
+import { Button } from '../../../styles/button.css';
 import { usePostThread } from '../api/post-thread';
 import { newThreadFormStyle } from './NewThreadForm.css';
-
-import { useRouter } from '@tanstack/react-router';
-import { Button } from '../../../styles/button.css';
 
 const NewThreadForm = () => {
   const router = useRouter();

@@ -1,7 +1,7 @@
 import { useMutation } from '@tanstack/react-query';
 
-import { apiClient } from '../../../api/apiClient';
 import { queryClient } from '../../../api';
+import { apiClient } from '../../../api/apiClient';
 
 const usePostThread = () => {
   return useMutation({
