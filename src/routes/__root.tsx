@@ -3,12 +3,15 @@ import { createRootRoute, Outlet } from '@tanstack/react-router';
 
 import { AppLayout } from '../components/layouts';
 import { queryClient } from '../api';
+import { ErrorBoundary } from 'react-error-boundary';
 
 export const Route = createRootRoute({
   component: () => (
     <QueryClientProvider client={queryClient}>
       <AppLayout>
-        <Outlet />
+        <ErrorBoundary fallback={<p>Sorry, something went wrong.</p>}>
+          <Outlet />
+        </ErrorBoundary>
       </AppLayout>
     </QueryClientProvider>
   ),
