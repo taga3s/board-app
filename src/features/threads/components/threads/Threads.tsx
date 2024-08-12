@@ -1,8 +1,8 @@
 import { Link } from '@tanstack/react-router';
 import { Suspense } from 'react';
 
-import { Message } from '../../../components';
-import { Route } from '../../../routes';
+import { Message } from '../../../../components';
+import { Route } from '../../../../routes';
 import { threadsStyle } from './Threads.css';
 import { ThreadsList } from './ThreadsList';
 

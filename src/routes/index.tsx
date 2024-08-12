@@ -1,7 +1,7 @@
 import { createFileRoute } from '@tanstack/react-router';
 import { z } from 'zod';
 
-import { Threads } from '../features/threads/components/Threads';
+import { Threads } from '../features/threads/components/threads/Threads';
 
 const searchSchema = z.object({
   offset: z.number().catch(0),

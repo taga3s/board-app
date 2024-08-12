@@ -1,6 +1,6 @@
 import { FC } from 'react';
 
-import { useListThreads } from '../api/list-threads';
+import { useListThreads } from '../../api/list-threads';
 import { threadsListStyle } from './ThreadsList.css';
 import { ThreadsListItem } from './ThreadsListItem';
 
