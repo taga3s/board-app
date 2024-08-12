@@ -10,7 +10,7 @@ type Props = {
 
 const ThreadsListItem: FC<Props> = ({ title, id }) => {
   return (
-    <Link className={threadsListItemStyle.wrapper} to={`/threads/${id}/`}>
+    <Link className={threadsListItemStyle.wrapper} to={`/threads/${id}/`} search={{ title: encodeURIComponent(title) }}>
       <span>{title}</span>
     </Link>
   );
