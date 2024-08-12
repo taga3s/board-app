@@ -1,6 +1,6 @@
 import { style } from '@vanilla-extract/css';
 
-import { vars } from '../../../styles/vars.css';
+import { vars } from '../../../../styles/vars.css';
 
 const newThreadFormStyle = {
   wrapper: style({

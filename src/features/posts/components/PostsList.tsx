@@ -17,7 +17,7 @@ const PostsList: FC<Props> = ({ threadId }) => {
         <ul className={postsListStyle.list}>{data?.posts.map((post) => <PostsListItem key={post.id} post={post.post} />)}</ul>
       ) : (
         <div className={postsListStyle.noDataMessage}>
-          <span>最初の投稿をしましょう！</span>
+          <span>最初のコメントをしましょう！</span>
         </div>
       )}
     </>
