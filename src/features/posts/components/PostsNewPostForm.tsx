@@ -1,7 +1,8 @@
 import { ChangeEvent, FC, FormEvent, useState } from 'react';
-import { postsNewPostFormStyle } from './PostsNewPostForm.css';
+
 import { Button } from '../../../styles/button.css';
 import { usePostNewPost } from '../api/post-new-post';
+import { postsNewPostFormStyle } from './PostsNewPostForm.css';
 
 type Props = {
   threadId: string;

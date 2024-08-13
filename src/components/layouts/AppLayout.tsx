@@ -1,4 +1,5 @@
 import { FC, ReactNode } from 'react';
+import { Toaster } from 'react-hot-toast';
 
 import { Header } from '..';
 
@@ -11,6 +12,7 @@ const AppLayout: FC<Props> = ({ children }) => {
     <>
       <Header />
       <main>{children}</main>
+      <Toaster />
     </>
   );
 };

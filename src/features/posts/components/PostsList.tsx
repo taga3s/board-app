@@ -4,12 +4,14 @@ import { useListPosts } from '../api/list-posts';
 import { postsListStyle } from './PostsList.css';
 import { PostsListItem } from './PostsListItem';
 
+const DEFAULT_OFFSET = 0;
+
 type Props = {
   threadId: string;
 };
 
 const PostsList: FC<Props> = ({ threadId }) => {
-  const { data } = useListPosts({ id: threadId, offset: 0 });
+  const { data } = useListPosts({ id: threadId, offset: DEFAULT_OFFSET });
 
   return (
     <>
