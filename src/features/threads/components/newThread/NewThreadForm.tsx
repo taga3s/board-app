@@ -17,7 +17,7 @@ const NewThreadForm = () => {
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    if (!title) {
+    if (!title.trim()) {
       alert('タイトルを入力してください');
       return;
     }

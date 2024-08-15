@@ -19,7 +19,7 @@ const PostsNewPostForm: FC<Props> = ({ threadId }) => {
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    if (!post) {
+    if (!post.trim()) {
       alert('内容を入力してください');
       return;
     }
