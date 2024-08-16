@@ -12,7 +12,7 @@ type Posts = {
 
 const useListPosts = (params: { id: string; offset: number }) => {
   return useSuspenseQuery<Posts>({
-    queryKey: [`posts-${params.id}`],
+    queryKey: [`posts-${params.id}-${params.offset}`],
     queryFn: () => apiClient.GET<Posts>(`/threads/${params.id}/posts?offset=${params.offset}`),
     staleTime: 1000 * 60 * 5,
   });
